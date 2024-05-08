@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Películas Populares</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+
+<body>
+    <%- include('partials/header') -%>
+        <div class="container">
+            <h1 class="my-4">Películas Populares</h1>
+            <div class="row">
+                <% movies.forEach(movie=> { %>
+                    <div class="col-md-4">
+                        <div class="card movie-card">
+                            <img class="card-img-top" src="<%= movie.posterPath %>" alt="<%= movie.title %>">
+                            <div class="card-body">
+                                <h5 class="card-title">
+                                    <%= movie.title %>
+                                </h5>
+                                <p class="card-text">
+                                    <%= movie.overview %>
+                                </p>
+                                <p class="card-text">
+                                    <span class="mr-1"><i class="fas fa-star"></i></span>Promedio de votos:
+                                    <%= movie.voteAverage %>
+                                </p>
+                                <p class="card-text">
+                                    <span class="mr-1"><i class="far fa-calendar-alt"></i></span>Fecha de lanzamiento:
+                                    <%= movie.releaseDate %>
+                                </p>
+                                <p class="card-text">
+                                    <!-- Agrega el botón "Ver detalle" -->
+                                    <a href="/peliculas/verDetallePelicula/<%= movie.id %>" class="btn btn-primary">Ver
+                                        detalle</a>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <% }); %>
+                        <%# esto es un comentario #%>
+            </div>
+        </div>
+</body>
+<%- include('partials/footer') -%>
+
+</html>

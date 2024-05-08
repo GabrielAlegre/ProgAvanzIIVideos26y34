@@ -1,0 +1,67 @@
+<!-- movieDetail.ejs -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalles de la Película</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <!-- Agrega la biblioteca de iconos de Bootstrap -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+    <style>
+        /* Agrega estilos para la imagen más pequeña */
+        .small-img {
+            width: 200px;
+            /* Ajusta el tamaño según tus necesidades */
+            height: auto;
+            /* Mantén la proporción */
+        }
+    </style>
+</head>
+
+<body>
+    <%- include('partials/header') -%>
+        <div class="container">
+            <h1 class="my-4"><i class="fas fa-film"></i> Detalle de la Película</h1>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="card">
+                        <img class="card-img-top small-img" src="<%= movie.posterPath %>" alt="<%= movie.title %>">
+                        <div class="card-body">
+                            <h5 class="card-title">
+                                <i class="fas fa-heading"></i>
+                                <%= movie.title %>
+                            </h5>
+                            <p class="card-text"><strong><i class="fas fa-info-circle"></i> Descripción:</strong>
+                                <%= movie.overview %>
+                            </p>
+                            <p class="card-text"><strong><i class="far fa-calendar-alt"></i> Fecha de
+                                    Lanzamiento:</strong>
+                                <%= movie.releaseDate %>
+                            </p>
+                            <p class="card-text"><strong><i class="fas fa-star"></i> Promedio de Votos:</strong>
+                                <%= movie.voteAverage %>
+                            </p>
+                            <p class="card-text"><strong><i class="fas fa-tags"></i> Titulo Original:</strong>
+                                <%= movie.original_title %>
+                            </p>
+                            <p class="card-text"><strong><i class="fas fa-language"></i> Idioma Original:</strong>
+                                <%= movie.originalLanguage %>
+                            </p>
+                            <p class="card-text"><strong><i class="fas fa-chart-line"></i> Popularidad:</strong>
+                                <%= movie.popularity %>
+                            </p>
+                            <!-- Agrega el botón para volver atrás -->
+                            <a href="/peliculas" class="btn btn-secondary"><i class="fas fa-arrow-left"></i> Volver a
+                                Películas</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <%- include('partials/footer') -%>
+</body>
+
+</html>

@@ -1,0 +1,29 @@
+<!-- views/home.ejs -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bienvenido</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+
+<body>
+    <%- include('partials/header') -%>
+        <div class="container">
+            <!-- Agrega la imagen relacionada con películas -->
+            <img src="https://laud.udistrital.edu.co/sites/default/files/imagen-noticia/2023-01/LAUD%20Dia-del-cine-.jpg"
+                class="img-fluid" alt="Cine">
+
+
+
+            <h1 class="my-4">Bienvenido</h1>
+            <p class="lead">Bienvenido a esta página donde podrás ver las películas más famosas.</p>
+            <a href="/peliculas" class="btn btn-primary">Ver películas</a>
+        </div>
+        <%- include('partials/footer') -%>
+</body>
+
+</html>
